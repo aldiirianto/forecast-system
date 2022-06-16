@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Penjualan</title>
+	<title>Forecasting Stone Depot</title>
 
 	<!-- Global stylesheets -->
 	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,900|Roboto+Mono&display=swap" rel=" stylesheet" type="text/css">
