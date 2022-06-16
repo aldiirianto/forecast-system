@@ -12,19 +12,37 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/barang" class="nav-link">
+            <a href="/produk" class="nav-link">
+				<i class="nav-icon fas fa-th"></i>
+                <p>
+					Produk
+                    <span class="right badge badge-danger">New</span>
+                </p>
+			</a>
+        </li>
+        <li class="nav-item">
+            <a href="/penjualan" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                    Data Barang
+                    Penjualan
                     <span class="right badge badge-danger">New</span>
                 </p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="/pelanggan" class="nav-link">
+            <a href="/manajemen_akun" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                    Pelanggan
+                    Manajemen Akun
+                    <span class="right badge badge-danger">New</span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/logout" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                    Logout
                     <span class="right badge badge-danger">New</span>
                 </p>
             </a>
