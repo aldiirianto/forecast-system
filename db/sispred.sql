@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2022 at 10:43 AM
+-- Generation Time: Jun 21, 2022 at 02:08 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -18,8 +18,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `forecast_app`
+-- Database: `sispred`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dataproduk`
+--
+
+CREATE TABLE `dataproduk` (
+  `id_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `dataproduk`
+--
+
+INSERT INTO `dataproduk` (`id_produk`, `nama_produk`, `harga`, `created_at`, `updated_at`) VALUES
+('A', 'Green Sukabumi Stone', 215000, NULL, NULL),
+('B', 'Terrazzo Tile', 320000, NULL, NULL),
+('C', 'Black Lavastone', 110000, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -54,12 +77,13 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(5, '2014_10_12_000000_create_users_table', 1),
-(6, '2014_10_12_100000_create_password_resets_table', 1),
-(7, '2019_08_19_000000_create_failed_jobs_table', 1),
-(8, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (10, '2022_05_28_084139_create_model_table', 2),
-(11, '2022_05_28_084409_create_pengguna_table', 3);
+(11, '2022_05_28_084409_create_pengguna_table', 3),
+(13, '2014_10_12_000000_create_users_table', 4),
+(14, '2014_10_12_100000_create_password_resets_table', 4),
+(15, '2019_08_19_000000_create_failed_jobs_table', 4),
+(16, '2019_12_14_000001_create_personal_access_tokens_table', 4),
+(17, '2022_06_17_162302_create_dataproduk_table', 4);
 
 -- --------------------------------------------------------
 
@@ -351,7 +375,8 @@ INSERT INTO `tbl_user` (`username`, `nama`, `password`, `status`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -362,14 +387,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '', '$2y$10$D90C6i8VXnxOVBWlwqn.q.pNmgAajXb8DCvbmWwaoaX8cLQjnM8Di', NULL, '2022-06-05 00:54:15', '2022-06-05 00:54:15'),
-(2, 'admin2', '', '$2y$10$0hyrmcYM20KZFIZSy1sc/uBoaku5QXR8CFdZKjpky1QSPdpymCGXG', NULL, '2022-06-05 01:00:22', '2022-06-05 01:00:22'),
-(3, 'admin3', '', 'Admin_123', NULL, '2022-06-05 01:02:14', '2022-06-05 01:02:14'),
-(4, 'admin', '', '$2y$10$73YPc6bI5VtmiWiSS.9jSObBDE6EpKVKjUXw4pWS8PisYhMBHL15y', NULL, '2022-06-06 07:22:15', '2022-06-06 07:22:15'),
-(5, 'admin', '', '$2y$10$hrVK8tzKVqv9y5XChmZ6ROQ60v1zc0v9VNYu9gzP6QJaVh/A3HQYK', NULL, '2022-06-06 07:27:34', '2022-06-06 07:27:34'),
-(6, 'aldi2', '', '$2y$10$yrdA/Rpz3AF35PggwBEy6OnvlyBI8WjIwVWhqrwrWSrDdJx.PwcDW', NULL, '2022-06-06 08:15:04', '2022-06-06 08:15:04'),
-(7, 'aldi21', 'aldiirianto999@gmail.com', '$2y$10$7qyYCLmw.DzlfU0LMkMiw.DjdJzvwTmy5.xw7rJTpV3/v9QOK1tva', 'KSSKOvU2R6BELgpS542nlKTC4JJv5dUVViciYmxhGOaj1SUqFJWlPD5tC88x', '2022-06-12 01:23:28', '2022-06-12 01:23:28');
+INSERT INTO `users` (`id`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'aldi', 'aldiirianto@gmail.com', NULL, '$2y$10$k0J567ByPAMXENfPLEMnmOdpTmlxVzHGJ9QWby7WmC14u2ke80kQ6', NULL, '2022-06-20 17:01:33', '2022-06-20 17:01:33');
 
 --
 -- Indexes for dumped tables
@@ -450,7 +469,8 @@ ALTER TABLE `tbl_user`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -466,7 +486,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `model`
@@ -514,7 +534,7 @@ ALTER TABLE `tbl_shipment`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
