@@ -203,7 +203,7 @@
 										</a>
 										<ul class="hidden-ul" style="display: none;">
 											<li>
-												<a href="?p=dataproduk" class="legitRipple">Data Produk</a>
+												<a href="/dataproduk" class="legitRipple">Data Produk</a>
 											</li>
 										
 												<li>
@@ -286,11 +286,18 @@
 
 						
 								<li class="">
-									<a href="proses/logout.php" class="legitRipple">
+									<a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+													 class="legitRipple">
 										<i class="icon-switch2	"></i>
-										<span>Logout</span>
+										{{ __('Logout') }}
 									</a>
+
 								</li>
+								
+								<form id="logout-form" action="{{ route('logout') }}" method="post" class="d-none">
+                                @csrf
+                                </form>
 							</ul>
 						</div>
 					</div>
@@ -309,8 +316,8 @@
 					<!-- /dashboard content -->
 					<!-- Footer -->
 					<div class="footer text-muted">
-						© 2018. Distributed by 
-						<a href="https://blogbugabagi.blogspot.com">BlogBugaBagi</a>
+						© 2022. 
+						<a href="#">Stone Depot</a>
 
 					</div>
 					<!-- /footer -->
