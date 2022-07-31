@@ -58,9 +58,9 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-     public function show($id)
+     public function show($id_produk)
     {
-        $itemproduk = Produk::findOrFail($id);
+        $itemproduk = Produk::findOrFail($id_produk);
         $data = array('title' => 'Foto Produk',
                 'itemproduk' => $itemproduk);
         return view('produk.show', $data);
@@ -72,9 +72,9 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_produk)
     {
-        $itemproduk = Produk::findOrFail($id);
+        $itemproduk = Produk::findOrFail($id_produk);
         $itemkategori = Kategori::orderBy('nama_kategori', 'asc')->get();
         $data = array('title' => 'Form Edit Produk',
                 'itemproduk' => $itemproduk,
@@ -89,17 +89,17 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_produk)
     {
         $this->validate($request, [
             'nama_produk' => 'required',
             'harga' => 'required|numeric'
         ]);
-        $itemproduk = Produk::findOrFail($id);
+        $itemproduk = Produk::findOrFail($id_produk);
         // kalo ga ada error page not found 404
         $produk = \Str::slug($request->nama_produk);//slug kita gunakan nanti pas buka produk
         // kita validasi dulu, biar tidak ada slug yang sama
-        $validasislug = Produk::where('id', '!=', $id)//yang id-nya tidak sama dengan $id
+        $validasislug = Produk::where('id_produk', '!=', $id_produk)//yang id-nya tidak sama dengan $id
                                 ->where('nama_produk', $produk)
                                 ->first();
         if ($validasislug) {
@@ -117,9 +117,9 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_produk)
     {
-        $itemproduk = Produk::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemproduk = Produk::findOrFail($id_produk);//cari berdasarkan id = $id, 
         // kalo ga ada error page not found 404
         if ($itemproduk->delete()) {
             return back()->with('success', 'Data berhasil dihapus');
@@ -135,7 +135,7 @@ class ProdukController extends Controller
         ]);
         $itemuser = $request->user();
         $itemproduk = Produk::where('user_id', $itemuser->id)
-                                ->where('id', $request->produk_id)
+                                ->where('id_produk', $request->id_produk)
                                 ->first();
         if ($itemproduk) {
             $fileupload = $request->file('image');

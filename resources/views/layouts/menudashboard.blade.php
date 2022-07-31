@@ -18,14 +18,22 @@
           <i class="right"></i>
         </p>
       </a>
-      <!-- <ul class="nav nav-treeview">
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="{{ route('kategori.index') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Category Products</p>
+          </a>
+        </li>
+      </ul> 
+      <ul class="nav nav-treeview">
         <li class="nav-item">
           <a href="{{ route('produk.index') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Data Products</p>
           </a>
         </li>
-      </ul> -->
+      </ul> 
     </li>
     <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
@@ -35,14 +43,14 @@
           <i class="right"></i>
         </p>
       </a>
-      <!-- <ul class="nav nav-treeview">
+      <ul class="nav nav-treeview">
         <li class="nav-item">
           <a href="{{ route('transaksi.index') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Data Transactions</p>
           </a>
         </li>
-      </ul> -->
+      </ul>
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link">

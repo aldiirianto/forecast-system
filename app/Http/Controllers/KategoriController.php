@@ -63,7 +63,7 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_kategori)
     {
         //
     }
@@ -74,9 +74,9 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_kategori)
     {
-        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemkategori = Kategori::findOrFail($id_kategori);//cari berdasarkan id = $id, 
         // kalo ga ada error page not found 404
         $data = array('title' => 'Form Edit Kategori',
                     'itemkategori' => $itemkategori);
@@ -90,18 +90,18 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_kategori)
     {
         $this->validate($request, [
             'nama_kategori'=>'required',
             'slug_kategori' => 'required',
             'deskripsi_kategori' => 'required',
         ]);
-        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemkategori = Kategori::findOrFail($id_kategori);//cari berdasarkan id = $id, 
         // kalo ga ada error page not found 404
         $slug = \Str::slug($request->slug_kategori);//slug kita gunakan nanti pas buka produk per kategori
         // kita validasi dulu, biar tidak ada slug yang sama
-        $validasislug = Kategori::where('id', '!=', $id)//yang id-nya tidak sama dengan $id
+        $validasislug = Kategori::where('id_kategori', '!=',$id_kategori)//yang id-nya tidak sama dengan $id
                                 ->where('slug_kategori', $slug)
                                 ->first();
         if ($validasislug) {
@@ -120,9 +120,9 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_kategori)
     {
-        $itemkategori = Kategori::findOrFail($id);//cari berdasarkan id = $id, 
+        $itemkategori = Kategori::findOrFail($id_kategori);//cari berdasarkan id = $id, 
         // kalo ga ada error page not found 404
         if (count((array)$itemkategori->produk) > 0) {
             // dicek dulu, kalo ada produk di dalam kategori maka proses hapus dihentikan
@@ -139,11 +139,11 @@ class KategoriController extends Controller
     public function uploadimage(Request $request) {
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'kategori_id' => 'required',
+            'id_kategori' => 'required',
         ]);
         $itemuser = $request->user();
         $itemkategori = Kategori::where('user_id', $itemuser->id)
-                                ->where('id', $request->kategori_id)
+                                ->where('id_kategori', $request->$id_kategori)
                                 ->first();
         if ($itemkategori) {
             $fileupload = $request->file('image');
@@ -157,10 +157,10 @@ class KategoriController extends Controller
         }
     }
 
-    public function deleteimage(Request $request, $id) {
+    public function deleteimage(Request $request, $id_kategori) {
         $itemuser = $request->user();
         $itemkategori = Kategori::where('user_id', $itemuser->id)
-                                ->where('id', $id)
+                                ->where('id_kategori', $id_kategori)
                                 ->first();
         if ($itemkategori) {
             // kita cari dulu database berdasarkan url gambar

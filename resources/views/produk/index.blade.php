@@ -40,8 +40,11 @@
               <thead>
                 <tr>
                   <th width="50px">No</th>
+                  <th>Gambar</th>
+                  <th>Kategori</th>
                   <th>Nama Produk</th>
                   <th>Harga Jual</th>
+                  <th>Keterangan</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -51,12 +54,12 @@
                   <td>
                   {{ ++$no }}
                   </td>
-                  <!-- <td>
-                     image kategori -->
-                    <!-- @if($produk->foto != null)
+                  <td>
+                     <!-- image kategori --> 
+                     @if($produk->foto != null)
                     <img src="{{ \Storage::url($produk->foto) }}" alt="{{ $produk->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
                     <br>
-                    <form action="{{ url('/admin/produkimage/'.$produk->id) }}" method="post" style="display:inline;">
+                    <form action="{{ url('/admin/produkimage/'.$produk->id_produk) }}" method="post" style="display:inline;">
                       @csrf
                       {{ method_field('delete') }}
                       <button type="submit" class="btn btn-sm btn-danger mb-2">
@@ -68,35 +71,32 @@
                       @csrf
                       <div class="form-group">
                         <input type="file" name="image" id="image">
-                        <input type="hidden" name="produk_id" value={{ $produk->id }}>
+                        <input type="hidden" name="id_produk" value="{{ $produk->id_produk }}">
                       </div>
                       <div class="form-group">
                         <button class="btn btn-primary">Upload</button>
                       </div>
                     </form>
-                    @endif -->
+                    @endif 
                     <!-- end image kategori -->
-                  <!-- </td> --> 
-                  <!-- <td>
-                  {{ $produk->kode_produk }}
-                  </td> -->
+                  </td>
+                  <td>
+                  {{ $produk->id_kategori }}
+                  </td> 
                   <td>
                   {{ $produk->nama_produk }}
                   </td>
-                  <!-- <td>
-                  {{ $produk->qty }} {{ $produk->satuan }}
-                  </td> -->
                   <td>
                   {{ number_format($produk->harga, 2) }}
                   </td>
-                  <!-- <td>
-                  {{ $produk->status }}
-                  </td> -->
                   <td>
-                    <a href="{{ route('produk.edit', $produk->id) }}" class="btn btn-sm btn-success mr-2 mb-2">
+                  {{ $produk->keterangan }}
+                  </td>
+                  <td>
+                    <a href="{{ route('produk.edit',$produk->id_produk) }}" class="btn btn-sm btn-success mr-2 mb-2">
                       Edit
                     </a>
-                    <form action="{{ route('produk.destroy', $produk->id) }}" method="post" style="display:inline;">
+                    <form action="{{ route('produk.destroy',$produk->id_produk) }}" method="post" style="display:inline;">
                       @csrf
                       {{ method_field('delete') }}
                       <button type="submit" class="btn btn-sm btn-danger mb-2">

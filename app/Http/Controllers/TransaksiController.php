@@ -13,6 +13,10 @@ class TransaksiController extends Controller
      */
     public function index()
     {
+        //$datatransaksi = Transaksi::orderBy('created_at', 'desc')->paginate(20);
+        // $data = array('title' => 'Transaksi',
+                    //'itemproduk' => $itemproduk);
+        //return view('produk.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
         $data = array('title' => 'Data Transaksi');
         return view('transaksi.index', $data);
     }

@@ -15,13 +15,9 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Invoice</th>
-                  <th>Sub Total</th>
-                  <th>Diskon</th>
-                  <th>Ongkir</th>
-                  <th>Total</th>
-                  <th>Status Pembayaran</th>
-                  <th>Status</th>
+                  <th>Tanggal</th>
+                  <th>Nama Produk</th>
+                  <th>Qty</th>
                   <th></th>
                 </tr>
               </thead>

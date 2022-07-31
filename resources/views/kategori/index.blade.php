@@ -46,9 +46,8 @@
                   <th>Gambar</th>
                   <th>Kode</th>
                   <th>Nama</th>
-                  <th>Jumlah Produk</th>
-                  <th>Status</th>
-                  <th></th>
+                  <th>Keterangan</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -62,7 +61,7 @@
                     @if($kategori->foto != null)
                     <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
                     <br>
-                    <form action="{{ url('/admin/imagekategori/'.$kategori->id) }}" method="post" style="display:inline;">
+                    <form action="{{ url('/admin/imagekategori/'.$kategori->id_kategori) }}" method="post" style="display:inline;">
                       @csrf
                       {{ method_field('delete') }}
                       <button type="submit" class="btn btn-sm btn-danger mb-2">
@@ -74,7 +73,7 @@
                       @csrf
                       <div class="form-group">
                         <input type="file" name="image" id="image">
-                        <input type="hidden" name="kategori_id" value={{ $kategori->id }}>
+                        <input type="hidden" name="id_kategori" value="{{ $kategori->id_kategori }}">
                       </div>
                       <div class="form-group">
                         <button class="btn btn-primary">Upload</button>
@@ -90,16 +89,13 @@
                   {{ $kategori->nama_kategori }}
                   </td>
                   <td>
-                  {{ count((array)$kategori->produk) }} Produk
-                  </td>
-                  <td>
                   {{ $kategori->status }}
                   </td>
                   <td>
-                    <a href="{{ route('kategori.edit', $kategori->id) }}" class="btn btn-sm btn-primary mr-2 mb-2">
+                    <a href="{{ route('kategori.edit',$kategori->id_kategori) }}" class="btn btn-sm btn-primary mr-2 mb-2">
                       Edit
                     </a>
-                    <form action="{{ route('kategori.destroy', $kategori->id) }}" method="post" style="display:inline;">
+                    <form action="{{ route('kategori.destroy',$kategori->id_kategori) }}" method="post" style="display:inline;">
                       @csrf
                       {{ method_field('delete') }}
                       <button type="submit" class="btn btn-sm btn-danger mb-2">

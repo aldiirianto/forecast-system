@@ -82,28 +82,28 @@
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>PRO-1</td>
-                <td>Baju Atasan</td>
-                <td>Baju Anak</td>
-                <td>12 kodi</td>
-                <td>5.000</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>PRO-2</td>
-                <td>Gamis</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>25.000</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>PRO-3</td>
-                <td>Daster</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>125.000</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
             </tbody>
           </table>

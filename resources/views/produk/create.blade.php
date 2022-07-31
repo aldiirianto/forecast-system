@@ -29,45 +29,27 @@
           @endif
           <form action="{{ route('produk.store') }}" method="post">
             @csrf
-            <!-- <div class="form-group">
-              <label for="kategori_id">Kategori Produk</label>
-              <select name="kategori_id" id="kategori_id" class="form-control">
+            <div class="form-group">
+              <label for="id_kategori">Kategori Produk</label>
+              <select name="id_kategori" id="id_kategori" class="form-control">
                 <option value="">Pilih Kategori</option>
                 @foreach($itemkategori as $kategori)
-                <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                <option value="{{ $kategori->id_kategori }}">{{ $kategori->nama_kategori }}</option>
                 @endforeach
               </select>
-            </div> -->
-            <!-- <div class="form-group">
-              <label for="kode_produk">Kode Produk</label>
-              <input type="text" name="kode_produk" id="kode_produk" class="form-control">
-            </div> -->
+            </div>
             <div class="form-group">
               <label for="nama_produk">Nama Produk</label>
               <input type="text" name="nama_produk" id="nama_produk" class="form-control">
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label for="slug_produk">Slug Produk</label>
               <input type="text" name="slug_produk" id="slug_produk" class="form-control">
-            </div> -->
-            <!-- <div class="form-group">
+            </div>
+            <div class="form-group">
               <label for="deskripsi_produk">Deskripsi</label>
               <textarea name="deskripsi_produk" id="deskripsi_produk" cols="30" rows="5" class="form-control"></textarea>
-            </div> -->
-            <!-- <div class="row">
-              <div class="col">
-                <div class="form-group">
-                  <label for="qty">Qty</label>
-                  <input type="text" name="qty" id="qty" class="form-control">
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-group">
-                  <label for="satuan">Satuan</label>
-                  <input type="text" name="satuan" id="satuan" class="form-control">
-                </div>
-              </div>
-            </div> -->
+            </div>
             <div class="form-group">
               <label for="harga">Harga Jual</label>
               <input type="text" name="harga" id="harga" class="form-control">

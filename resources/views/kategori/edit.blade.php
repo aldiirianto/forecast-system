@@ -28,7 +28,7 @@
                   <p>{{ $message }}</p>
               </div>
           @endif
-          <form action="{{ route('kategori.update', $itemkategori->id) }}" method="post">
+          <form action="{{ route('kategori.update', $itemkategori->id_kategori) }}" method="post">
             @csrf
             {{ method_field('patch') }}
             <div class="form-group">
