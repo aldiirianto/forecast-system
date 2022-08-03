@@ -81,7 +81,7 @@
                     <!-- end image kategori -->
                   </td>
                   <td>
-                  {{ $produk->id_kategori }}
+                  {{ $produk->kategori->nama_kategori }}
                   </td> 
                   <td>
                   {{ $produk->nama_produk }}

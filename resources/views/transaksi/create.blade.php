@@ -27,34 +27,27 @@
                   <p>{{ $message }}</p>
               </div>
           @endif
-          <form action="{{ route('produk.update', $itemproduk->id_produk) }}" method="post">
-            {{ method_field('patch') }}
+          <form action="{{ route('transaksi.store') }}" method="post">
             @csrf
             <div class="form-group">
-              <label for="nama_produk">Nama Produk</label>
-              <input type="text" name="nama_produk" id="nama_produk" class="form-control">
+              <label for="id_produk">Nama Produk</label>
+              <select name="id_produk" id="id_produk" class="form-control">
+                <option value="">Pilih Produk</option>
+                @foreach($itemproduk as $produk)
+                <option value="{{ $produk->kategori->nama_kategori }}">{{ $produk->kategori->nama_kategori }}</option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
-              <label for="slug_produk">Slug Produk</label>
-              <input type="text" name="slug_produk" id="slug_produk" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="deskripsi_produk">Harga Jual</label>
-              <input name="text" id="harga"class="form-control"></input>
+              <label for="tgl_transaksi">Tanggal Transaksi</label>
+              <input type="date" name="tgl_transaksi" id="tgl_transaksi" class="form-control">
             </div>
             <div class="form-group">
               <label for="harga">Qty</label>
               <input type="text" name="qty" id="qty" class="form-control">
             </div>
-            <!-- <div class="form-group">
-              <label for="status">Status</label>
-              <select name="status" id="status" class="form-control">
-                <option value="publish" {{ $itemproduk->status == 'publish'? 'selected': ''}}>Publish</option>
-                <option value="unpublish" {{ $itemproduk->status == 'unpublish'? 'selected': ''}}>Unpublish</option>
-              </select>
-            </div> -->
             <div class="form-group">
-              <button type="submit" class="btn btn-success">Update</button>
+              <button type="submit" class="btn btn-success">Simpan</button>
               <button type="reset" class="btn btn-warning">Reset</button>
             </div>
           </form>
