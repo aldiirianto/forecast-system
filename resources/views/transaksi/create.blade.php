@@ -34,7 +34,7 @@
               <select name="id_produk" id="id_produk" class="form-control">
                 <option value="">Pilih Produk</option>
                 @foreach($itemproduk as $produk)
-                <option value="{{ $produk->kategori->nama_kategori }}">{{ $produk->kategori->nama_kategori }}</option>
+                <option value="{{ $produk->id_produk }}">{{ $produk->nama_produk }}</option>
                 @endforeach
               </select>
             </div>
@@ -43,7 +43,7 @@
               <input type="date" name="tgl_transaksi" id="tgl_transaksi" class="form-control">
             </div>
             <div class="form-group">
-              <label for="harga">Qty</label>
+              <label for="qty">Qty</label>
               <input type="text" name="qty" id="qty" class="form-control">
             </div>
             <div class="form-group">

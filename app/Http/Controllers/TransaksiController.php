@@ -13,12 +13,22 @@ class TransaksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function __construct()
     {
-        $datatransaksi = Transaksi::with('produk');
-        $data = array('title' => 'Transaksi',
-                      'datatransaksi' => $datatransaksi);
-        return view('transaksi.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
+        $this->Transaksi = new Transaksi();
+    }
+
+    public function index()
+    {
+        $datatransaksi = Transaksi::orderBy('created_at', 'desc')->paginate(20);
+        $itemproduk = Produk::paginate(20);
+        $itemkategori = Kategori::paginate(20);
+        $data = ['title' => 'Transaksi',
+        'data_transaksi' => $datatransaksi,
+        'itemproduk' => $itemproduk,
+        'itemkategori' => $itemkategori
+        ];
+        return view('transaksi.index', $data);
     }
 
     /**
@@ -28,7 +38,7 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        $itemproduk = Produk::with('kategori')->get();
+        $itemproduk = Produk::orderBy('nama_produk', 'asc')->get();
         $data = array('title' => 'Form Transaksi Baru',
                     'itemproduk' => $itemproduk);
         return view('transaksi.create', $data);//
@@ -43,7 +53,7 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'tgl_transaksi' => 'required',
+            'tgl_transaksi' => 'required|date',
             'qty' => 'required',
         ]);
         $itemuser = $request->user();//ambil data user yang login

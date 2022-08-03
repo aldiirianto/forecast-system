@@ -46,20 +46,20 @@
                 </tr>
               </thead>
               <tbody>
-              @foreach($datatransaksi as $transaksi)
+              <?php $no = 1; ?>
+              @foreach($data_transaksi as $transaksi)
                 <tr>
                   <td>
                   {{ ++$no }}
                   </td>
                   <td>
-                  {{ $transaksi->id_produk }}
+                  {{ $transaksi->tgl_transaksi }}
+                  </td>
+                  <td>
+                  {{ $transaksi->produk->nama_produk}}
                   </td>
                   <td>
                   {{ $transaksi->qty }}
-                  </td>
-                  <td>        
-                  </td>
-                  <td>
                   </td>
                   <td>
                     <a href="" class="btn btn-sm btn-info mb-2">

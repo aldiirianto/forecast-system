@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Transaksi extends Model
 {
@@ -20,10 +21,21 @@ class Transaksi extends Model
     }
 
     public function produk() {
-        return $this->belongsTo('App\Models\Produk');
+        return $this->belongsTo('App\Models\Produk', 'id_produk');
     }
 
     public function kategori() {
-        return $this->belongsTo('App\Models\Kategori');
+        return $this->belongsTo('App\Models\Kategori', 'id_kategori');
+    }
+
+
+
+    public function allData()
+    {
+        return DB::table('data_transaksi')
+            ->leftJoin('produk', 'produk.id_produk', '=', 'data_transaksi.id_produk')
+            ->leftJoin('kategori', 'kategori.id_kategori', '=', 'produk.id_kategori')
+            ->get();
     }
 }
+
