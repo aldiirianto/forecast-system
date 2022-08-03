@@ -44,15 +44,7 @@
               <input type="text" name="nama_produk" id="nama_produk" value="{{ $itemproduk->nama_produk }}" class="form-control">
             </div>
             <div class="form-group">
-              <label for="slug_produk">Slug Produk</label>
-              <input type="text" name="slug_produk" id="slug_produk" value="{{ $itemproduk->slug_produk }}" class="form-control">
-            </div> 
-            <div class="form-group">
-              <label for="deskripsi_produk">Deskripsi</label>
-              <textarea name="deskripsi_produk" id="deskripsi_produk" cols="30" rows="5" class="form-control">{{ $itemproduk->deskripsi_produk }}</textarea>
-            </div>
-            <div class="form-group">
-              <label for="harga">Harga Beli</label>
+              <label for="harga">Harga Jual</label>
               <input type="text" name="harga" id="harga" value="{{ $itemproduk->harga }}" class="form-control">
             </div>
             <!-- <div class="form-group">

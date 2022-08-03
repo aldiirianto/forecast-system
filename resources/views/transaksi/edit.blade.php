@@ -27,23 +27,24 @@
                   <p>{{ $message }}</p>
               </div>
           @endif
-          <form action="{{ route('produk.update', $itemproduk->id_produk) }}" method="post">
+          <form action="{{ route('transaksi.update', $datatransaksi->id_produk) }}" method="post">
             {{ method_field('patch') }}
             @csrf
             <div class="form-group">
-              <label for="nama_produk">Nama Produk</label>
-              <input type="text" name="nama_produk" id="nama_produk" class="form-control">
+              <label for="id_produk">Nama Produk</label>
+              <select name="id_produk" id="id_produk" class="form-control">
+                <option value="">Pilih Produk</option>
+                @foreach($datatransaksi as $transaksi)
+                <option value="{{ $transaksi->id_produk }}">{{ $transaksi->nama_produk }}</option>
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
-              <label for="slug_produk">Slug Produk</label>
-              <input type="text" name="slug_produk" id="slug_produk" class="form-control">
+              <label for="tgl_transaksi">Tanggal Transaksi</label>
+              <input type="date" name="tgl_transaksi" id="tgl_transaksi" class="form-control">
             </div>
             <div class="form-group">
-              <label for="deskripsi_produk">Harga Jual</label>
-              <input name="text" id="harga"class="form-control"></input>
-            </div>
-            <div class="form-group">
-              <label for="harga">Qty</label>
+              <label for="qty">Qty</label>
               <input type="text" name="qty" id="qty" class="form-control">
             </div>
             <!-- <div class="form-group">

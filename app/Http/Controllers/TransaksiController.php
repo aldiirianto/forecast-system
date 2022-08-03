@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Kategori;
 use App\Models\Transaksi;
+use DB;
+
 class TransaksiController extends Controller
 {
     /**
@@ -86,7 +88,7 @@ class TransaksiController extends Controller
     {
         $datatransaksi = Transaksi::findOrFail($id_transaksi);
         $data = array('title' => 'Form Edit Transaksi',
-                      'itemproduk' => $itemproduk,);
+                      'datatransaksi' => $datatransaksi,);
         return view('transaksi.edit', $data);
     }
 
@@ -121,5 +123,19 @@ class TransaksiController extends Controller
         } else {
             return back()->with('error', 'Data gagal dihapus');
         }
+    }
+
+    public function grafik()
+    {
+        $total_qty = Transaksi::select(DB::raw("CAST(SUM(qty) as int) as total_qty"))
+        ->GroupBy(DB::raw("Month(created_at)"))
+        ->pluck('total_qty');
+
+        $bulan = Transaksi::select(DB::raw("MONTHNAME(created_at) as bulan"))
+        ->GroupBy(DB::raw("MONTHNAME(created_at)"))
+        ->pluck('bulan');
+        dd($total_qty);
+
+        return view('transaksi.grafik', compact('total_qty', 'bulan'));
     }
 }

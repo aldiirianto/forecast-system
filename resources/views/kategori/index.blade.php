@@ -6,12 +6,9 @@
     <div class="col">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Kategori Produk</h4>
-          <div class="card-tools">
             <a href="{{ route('kategori.create') }}" class="btn btn-sm btn-primary">
               Tambah Baru
             </a>
-          </div>
         </div>
         <div class="card-body">
           <form action="#">
@@ -43,7 +40,6 @@
               <thead>
                 <tr>
                   <th width="50px">No</th>
-                  <th>Gambar</th>
                   <th>Kode</th>
                   <th>Nama</th>
                   <th>Keterangan</th>
@@ -56,8 +52,8 @@
                   <td>
                   {{ ++$no }}
                   </td>
-                  <td>
-                    <!-- image kategori -->
+                  <!-- <td>
+                    image kategori
                     @if($kategori->foto != null)
                     <img src="{{ \Storage::url($kategori->foto) }}" alt="{{ $kategori->nama_kategori }}" width='150px' class="img-thumbnail mb-2">
                     <br>
@@ -81,7 +77,7 @@
                     </form>
                     @endif
                     <!-- end image kategori -->
-                  </td>
+                  <!-- </td> --> 
                   <td>
                   {{ $kategori->kode_kategori }}
                   </td>

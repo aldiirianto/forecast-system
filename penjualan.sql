@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2022 at 06:35 PM
+-- Generation Time: Aug 03, 2022 at 06:21 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `penjualan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_transaksi`
+--
+
+CREATE TABLE `data_transaksi` (
+  `id_transaksi` int(10) UNSIGNED NOT NULL,
+  `tgl_transaksi` date DEFAULT NULL,
+  `id_produk` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `satuan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `data_transaksi`
+--
+
+INSERT INTO `data_transaksi` (`id_transaksi`, `tgl_transaksi`, `id_produk`, `qty`, `satuan`, `created_at`, `updated_at`) VALUES
+(8, '2022-01-19', 7, 12, '', '2022-08-03 07:49:06', '2022-08-03 07:49:06'),
+(9, '2022-01-18', 12, 120, '', '2022-08-03 07:49:25', '2022-08-03 07:49:25'),
+(10, '2022-01-20', 7, 4, '', '2022-08-03 08:04:50', '2022-08-03 08:04:50');
 
 -- --------------------------------------------------------
 
@@ -75,7 +100,8 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kode_kategori`, `nama_kategori`, `slug_kategori`, `deskripsi_kategori`, `status`, `foto`, `user_id`, `created_at`, `updated_at`) VALUES
-(2, 'UTERRA-2022', 'Ubin Terrazzo', 'ubin-terazzo', 'Ubin terrazzo', 'publish', NULL, 1, '2022-07-31 09:29:07', '2022-07-31 09:29:07');
+(2, 'TRZ-001', 'Ubin Terrazzo Cetak', 'ubin-terazzo-cetak', 'Ubin terrazzo cetak dengan ukuran 30x60 cm dan 60x60 cm.', 'Publish', NULL, 1, '2022-07-31 09:29:07', '2022-08-03 07:41:27'),
+(3, 'TMX-001', 'Teraso Cor Instant', 'teraso-cor-instant', 'Produk teraso cor dalam kemasan siap pakai.', 'Publish', NULL, 1, '2022-08-02 08:55:22', '2022-08-03 07:34:58');
 
 -- --------------------------------------------------------
 
@@ -133,7 +159,12 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `user_id`, `id_kategori`, `nama_produk`, `harga`, `created_at`, `updated_at`) VALUES
-(2, 1, 2, 'Ubin Teraso Cetak', 320000.00, '2022-07-31 09:29:52', '2022-07-31 09:29:52');
+(7, 1, 3, 'Terramix', 215000.00, '2022-08-03 07:44:24', '2022-08-03 07:44:24'),
+(8, 1, 2, 'Ubin Teraso Cetak - Cordon Blue', 320000.00, '2022-08-03 07:46:18', '2022-08-03 07:46:18'),
+(9, 1, 2, 'Ubin Teraso Cetak - Orange Classic', 320000.00, '2022-08-03 07:46:37', '2022-08-03 07:46:37'),
+(10, 1, 2, 'Ubin Teraso Cetak - Coral Pink', 340000.00, '2022-08-03 07:46:55', '2022-08-03 07:46:55'),
+(11, 1, 2, 'Ubin Teraso Cetak - Green Army', 340000.00, '2022-08-03 07:47:18', '2022-08-03 07:47:18'),
+(12, 1, 2, 'Ubin Teraso Cetak - Black Casto', 390000.00, '2022-08-03 07:47:34', '2022-08-03 07:47:34');
 
 -- --------------------------------------------------------
 
@@ -164,6 +195,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ph
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `data_transaksi`
+--
+ALTER TABLE `data_transaksi`
+  ADD PRIMARY KEY (`id_transaksi`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -216,6 +253,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `data_transaksi`
+--
+ALTER TABLE `data_transaksi`
+  MODIFY `id_transaksi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -231,7 +274,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kategori` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -243,7 +286,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`

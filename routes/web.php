@@ -62,6 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::post('produkimage', [ProdukController::class, 'uploadimage']);
   // hapus image produk
   Route::delete('produkimage/{id}', [ProdukController::class, 'deleteimage']);
+  Route::delete('grafik', [TransaksiController::class, 'grafik']);
 });
 
 

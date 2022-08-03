@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header">
             <a href="{{ route('transaksi.create') }}" class="btn btn-sm btn-primary">
-              + Add New
+              Tambah Baru
             </a>
         </div>
         <div class="card-body">
@@ -41,7 +41,9 @@
                   <th>No</th>
                   <th>Tanggal</th>
                   <th>Nama Produk</th>
+                  <th>Harga Jual</th>
                   <th>Qty</th>
+                  <th>Total Harga</th>
                   <th>Keterangan</th>
                 </tr>
               </thead>
@@ -59,14 +61,20 @@
                   {{ $transaksi->produk->nama_produk}}
                   </td>
                   <td>
+                  Rp.  {{number_format($transaksi->produk->harga)}}
+                  </td>
+                  <td>
                   {{ $transaksi->qty }}
                   </td>
                   <td>
-                    <a href="" class="btn btn-sm btn-info mb-2">
+                  Rp.  {{number_format($transaksi->produk->harga * $transaksi->qty)}}
+                  </td>
+                  <td>
+                    <!-- <a href="" class="btn btn-sm btn-info mb-2">
                       Detail
                     </a>
-                    <a href="" class="btn btn-sm btn-primary mb-2">
-                      Edit
+                    <a href="{{ route('transaksi.edit',$transaksi->id_transaksi) }}" class="btn btn-sm btn-primary mb-2">
+                      Edit -->
                     </a>
                   </td>
                 </tr>

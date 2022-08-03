@@ -18,6 +18,7 @@ class CreateDataTransaksiTable extends Migration
             $table->date('tgl_transaksi');
             $table->integer('id_produk');
             $table->integer('qty');
+            $table->string('satuan');
             $table->foreign('id_produk')->references('id_produk')->on('produk');
             $table->timestamps();
         });
