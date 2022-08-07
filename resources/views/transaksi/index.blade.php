@@ -48,7 +48,7 @@
                 </tr>
               </thead>
               <tbody>
-              <?php $no = 1; ?>
+              <?php $no = 0; ?>
               @foreach($data_transaksi as $transaksi)
                 <tr>
                   <td>
