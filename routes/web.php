@@ -32,6 +32,7 @@ Route::get('/produk/{slug}', [HomepageController::class,'produkdetail']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::get('/', [DashboardController::class, 'index']);
+  Route::get('/', [DashboardController::class, 'highChart']);
    // route kategori
   Route::resource('kategori', KategoriController::class);
   // route produk
