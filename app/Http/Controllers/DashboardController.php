@@ -6,24 +6,39 @@ use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Kategori;
 use App\Models\Transaksi;
+use DB;
 
 class DashboardController extends Controller
 {
     public function index() {
         $data = array('title' => 'Dashboard');
-        return view('dashboard.index', $data);
+        return view('dashboard.index', ['data' => $data, 'transaksi' => $transaksi]);
     }
 
     public function highChart()
     {
-        $datatransaksi = Transaksi::orderBy('created_at', 'desc')->paginate(20);
-        $itemproduk = Produk::paginate(20);
+        $transaksi = \App\Models\Transaksi::count();
+        $datatransaksi = \App\Models\Transaksi::all();
+        $itemproduk = \App\Models\Produk::count();
         $itemkategori = Kategori::paginate(20);
-         $data = array('title' => 'Dashboard',
-         'data_transaksi' => $datatransaksi,
-         'data_transaksi' => $datatransaksi,
-         'itemproduk' => $itemproduk,
-         'itemkategori' => $itemkategori);
-        return view('dashboard.index', $data);
+        $title = 'Dashboard';
+        
+        $qty = \App\Models\Transaksi::sum('qty');
+        // dd($itemproduk);
+
+        $categories = [];
+        foreach($datatransaksi as $item){
+            $categories[] =$item->produk->nama_produk;
+        }
+
+        // dd($qty);
+
+        
+
+        $categories['chart_data'] = json_encode($categories);
+        // $qty['sum_data'] = json_encode($qty);
+
+        // dd($categories);
+        return view('dashboard.index', ['itemproduk' => $itemproduk, 'transaksi' => $transaksi,'qty' => $qty,'datatransaksi' => $datatransaksi, 'title' => $title, 'categories' => $categories, 'qty' => $qty]);
     }
 }

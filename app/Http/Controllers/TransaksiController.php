@@ -75,7 +75,7 @@ class TransaksiController extends Controller
     {
         $datatransaksi = Transaksi::findOrFail($id_transaksi);
         $data = array('title' => 'Detail Transaksi');
-        return view('transaksi.show', $data);
+        return view('transdaksi.show', $data);
     }
 
     /**
@@ -87,7 +87,7 @@ class TransaksiController extends Controller
     public function edit($id_transaksi)
     {
         $datatransaksi = Transaksi::findOrFail($id_transaksi);
-        $data = array('title' => 'Form Edit Transaksi',
+        $data = array('title' => 'Form Eit Transaksi',
                       'datatransaksi' => $datatransaksi,);
         return view('transaksi.edit', $data);
     }
