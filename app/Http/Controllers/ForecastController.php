@@ -10,4 +10,9 @@ class ForecastController extends Controller
         $data = array('title' => 'Forecast');
         return view('forecast.index', $data);
     }
+
+    public function hitung() {
+        $data = array('title' => 'Perhitungan');
+        return view('forecast.hitung', $data);
+    }
 }
