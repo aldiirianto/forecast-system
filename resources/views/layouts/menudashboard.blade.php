@@ -55,7 +55,7 @@
     </li>
 
     <li class="nav-item has-treeview">
-      <a href="#" class="nav-link">
+      <a href="{{ route('forecast.index' )}}" class="nav-link">
         <i class="nav-icon fas fa-list"></i>
         <p>
           Forecast
@@ -70,14 +70,6 @@
           </a>
         </li>
       </ul> -->
-    </li>
-    <li class="nav-item">
-      <a href="{{ URL::to('admin/profil') }}" class="nav-link">
-        <i class="nav-icon fas fa-users"></i>
-        <p>
-          User Profil
-        </p>
-      </a>
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link" onclick="event.preventDefault();

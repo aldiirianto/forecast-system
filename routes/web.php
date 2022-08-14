@@ -5,6 +5,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\ForecastController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AuthController;
@@ -41,6 +42,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::resource('customer', CustomerController::class);
   // route transaksi
   Route::resource('transaksi', TransaksiController::class);
+  // route forecast
+  Route::resource('forecast', ForecastController::class);
   // profil
   Route::get('profil', [UserController::class, 'index']);
   // setting profil

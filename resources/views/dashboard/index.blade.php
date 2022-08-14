@@ -32,9 +32,9 @@
     <div class="col-6 col-lg-4">
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>{{$qty}}</h3>
+          <h3>{{number_format($qty)}}</h3>
 
-          <p>Qty Penjualan</p>
+          <p>Total Qty Penjualan (m2)</p>
         </div>
         <div class="icon">
           <i class="ion ion-pie-graph"></i>
@@ -77,7 +77,7 @@ chart: {
 },
 
 title: {
-    text: 'Grafik Penjualan Produk Batu Alam Stone Depot'
+    text: 'Grafik Penjualan Produk Batu Alam Periode Januari - Juni 2020'
 },
 
 subtitle: {
@@ -85,12 +85,12 @@ subtitle: {
 },
 
 xAxis: {
-    type: 'datetime'
+  categories: ['Jan 20', 'Feb 20', 'Mar 20', 'Apr 20', 'Mei 20', 'Jun 20']
 },
 
 yAxis: {
     title: {
-        text: 'Qty'
+        text: 'Qty (m2)'
     }
 },
 
@@ -99,30 +99,32 @@ legend: {
     align: 'right',
     verticalAlign: 'middle'
 },
-
 plotOptions: {
-    series: {
-        pointStart: Date.UTC(2020, 0, 1),
-        pointInterval: 31 * 24 * 3600 * 1000 // one MONTH
-    }
+  column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
 },
 
 
 series: [{
-    name: cData[0],
-    data: [100,20,10]
+    name: 'Terramix',
+    data: [70,202,155,40,145]
 }, {
-    name: cData[1],
-    data: [200,80,60]
+    name: 'Ubin Teraso Cetak - Cordon Blue',
+    data: [55,15,25,25,80,50]
 }, {
-    name: cData[2],
-    data: [20,50,80]
+    name: 'Ubin Teraso Cetak - Orange Classic',
+    data: [85,35,42,25,25]
 }, {
-    name: cData[3],
-    data: [20,10,30]
+    name: 'Ubin Teraso Cetak - Coral Pink',
+    data: [0,25,15,23,10,15]
 }, {
-    name: cData[4],
-    data: [100,60,10]
+    name: 'Ubin Teraso Cetak - Green Army',
+    data: [25,80,50,15,5,25]
+}, {
+    name: 'Ubin Teraso Cetak - Black Casto',
+    data: [100,45,25,56,15,100]
 }],
 
 responsive: {
