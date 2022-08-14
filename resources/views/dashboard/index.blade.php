@@ -110,19 +110,19 @@ plotOptions: {
 
 series: [{
     name: cData[0],
-    data: cQty,
+    data: [20,10,60]
 }, {
     name: cData[1],
-    data: cQty
+    data: [200,80,60]
 }, {
     name: cData[2],
-    data: cQty
+    data: [20,50,80]
 }, {
     name: cData[3],
-    data: cQty
+    data: [20,10,30]
 }, {
     name: cData[4],
-    data: cQty
+    data: [100,60,10]
 }],
 
 responsive: {
