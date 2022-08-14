@@ -22,8 +22,9 @@ class DashboardController extends Controller
         $itemproduk = \App\Models\Produk::count();
         $itemkategori = Kategori::paginate(20);
         $title = 'Dashboard';
-        
+
         $qty = \App\Models\Transaksi::sum('qty');
+        $sum1 = \App\Models\Transaksi::where('id_produk', '7')->sum('qty');
         // dd($itemproduk);
 
         $categories = [];
@@ -36,9 +37,9 @@ class DashboardController extends Controller
         
 
         $categories['chart_data'] = json_encode($categories);
-        // $qty['sum_data'] = json_encode($qty);
+        $sum1= json_encode($sum1);
 
         // dd($categories);
-        return view('dashboard.index', ['itemproduk' => $itemproduk, 'transaksi' => $transaksi,'qty' => $qty,'datatransaksi' => $datatransaksi, 'title' => $title, 'categories' => $categories, 'qty' => $qty]);
+        return view('dashboard.index', ['sum1' => $sum1,'itemproduk' => $itemproduk, 'transaksi' => $transaksi,'qty' => $qty,'datatransaksi' => $datatransaksi, 'title' => $title, 'categories' => $categories, 'qty' => $qty]);
     }
 }

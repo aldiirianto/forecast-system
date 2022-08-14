@@ -68,7 +68,7 @@
 
 <script type="text/javascript">
 var cData = JSON.parse(`<?php echo $categories['chart_data'];?>`);
-var cQty = JSON.parse(`<?php echo $qty;?>`);
+var cQty = JSON.parse(`<?php echo $sum1;?>`);
 
   Highcharts.chart('container',
 {
@@ -77,7 +77,7 @@ chart: {
 },
 
 title: {
-    text: 'Grafik Penjualan Produk Batu Alam, Januari 2020 - Desember 2021'
+    text: 'Grafik Penjualan Produk Batu Alam Stone Depot'
 },
 
 subtitle: {
@@ -102,7 +102,7 @@ legend: {
 
 plotOptions: {
     series: {
-        pointStart: Date.UTC(2022, 0, 1),
+        pointStart: Date.UTC(2020, 0, 1),
         pointInterval: 31 * 24 * 3600 * 1000 // one MONTH
     }
 },
@@ -110,7 +110,7 @@ plotOptions: {
 
 series: [{
     name: cData[0],
-    data: [20,10,60]
+    data: [100,20,10]
 }, {
     name: cData[1],
     data: [200,80,60]
