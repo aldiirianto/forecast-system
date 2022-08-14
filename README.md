@@ -1,6 +1,6 @@
 Dashboard 
 ---------
-![image](https://user-images.githubusercontent.com/63491056/184520151-fe5238ba-675d-4f23-a70a-4b29d6b9bdb5.png)
+![image](https://user-images.githubusercontent.com/63491056/184547990-0dc542b9-5258-48af-b0ca-9c84eb565001.png)
 
 Kategori
 -------
@@ -17,8 +17,4 @@ Transactions
 
 Forecast 
 ---------
-No founds data yet
-
-User Profile
----------
-![image](https://user-images.githubusercontent.com/63491056/184520121-0d941def-99ce-42e8-aab8-35ec336cdc8c.png)
+![image](https://user-images.githubusercontent.com/63491056/184548009-872ace8b-48be-42db-99b8-caf4c055e661.png)
