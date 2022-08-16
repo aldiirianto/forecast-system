@@ -53,6 +53,14 @@
         </div>
         <div class="card-body">
         
+description">
+        
+    </p>
+</figure>
+
+<script type="text/javascript">
+var cData = JSON.parse(`<?php echo $categories['chart_data'];?>`);
+var cQty = JSON.parse(`<?php echo $sum1;?>`);
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -61,15 +69,7 @@
 
 <figure class="highcharts-figure">
     <div id="container"></div>
-    <p class="highcharts-description">
-        
-    </p>
-</figure>
-
-<script type="text/javascript">
-var cData = JSON.parse(`<?php echo $categories['chart_data'];?>`);
-var cQty = JSON.parse(`<?php echo $sum1;?>`);
-
+    <p class="highcharts-
   Highcharts.chart('container',
 {
 chart: {
