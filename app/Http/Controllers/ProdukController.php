@@ -15,7 +15,7 @@ class ProdukController extends Controller
      */
    public function index(Request $request)
     {
-        $itemproduk = Produk::orderBy('created_at', 'desc')->paginate(20);
+        $itemproduk = Produk::orderBy('nama_produk', 'asc')->paginate(20);
         $data = array('title' => 'Produk',
                     'itemproduk' => $itemproduk);
         return view('produk.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);

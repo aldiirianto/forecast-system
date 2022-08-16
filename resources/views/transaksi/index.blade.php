@@ -34,8 +34,8 @@
                   <p>{{ $message }}</p>
               </div>
           @endif
-          <div class="table-responsive">
-            <table class="table">
+          <div class="table-responsive-md">
+            <table class="table table-bordered">
               <thead>
                 <tr>
                   <th>No</th>

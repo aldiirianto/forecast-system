@@ -10,21 +10,18 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <script src="https://code.highcharts.com/highcharts.js"></script>
-                    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-                    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-                    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-                    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-                    <figure class="highcharts-figure">
-                    <div id="container"></div>
-                    <p class="highcharts-description">
-                    </p>
-                    </figure>
-
-                    <script type="text/javascript">
-
-
-                    Highcharts.chart('container',
+                <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<figure class="highcharts-figure">
+<div id="container"></div>
+<p class="highcharts-description">
+ </p>
+</figure>
+<script type="text/javascript">
+Highcharts.chart('container',
                     {
                     chart: {
                     type: 'column'

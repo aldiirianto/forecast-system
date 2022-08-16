@@ -16,7 +16,7 @@ class KategoriController extends Controller
     {
         // kita ambil data kategori per halaman 20 data dan (paginate(20))
         // kita urutkan yang terakhir diiput yang paling atas (orderBy)
-        $itemkategori = Kategori::orderBy('created_at', 'desc')->paginate(20);
+        $itemkategori = Kategori::orderBy('kode_kategori', 'asc')->paginate(20);
         $data = array('title' => 'Kategori Produk',
                     'itemkategori' => $itemkategori);
         return view('kategori.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);

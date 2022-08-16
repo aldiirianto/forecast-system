@@ -22,7 +22,7 @@ class TransaksiController extends Controller
 
     public function index()
     {
-        $datatransaksi = Transaksi::orderBy('created_at', 'desc')->paginate(20);
+        $datatransaksi = Transaksi::orderBy('tgl_transaksi', 'asc')->paginate(20);
         $itemproduk = Produk::paginate(20);
         $itemkategori = Kategori::paginate(20);
         $data = ['title' => 'Transaksi',
