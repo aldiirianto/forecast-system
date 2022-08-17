@@ -1,6 +1,6 @@
 Dashboard 
 ---------
-![image](https://user-images.githubusercontent.com/63491056/185108424-862093bc-16b6-459c-bdc0-f9c211877f12.png)
+![image](https://user-images.githubusercontent.com/63491056/185198438-bfddb26c-3e38-4311-8607-c87a50c029fe.png)
 
 Kategori
 -------
@@ -16,12 +16,9 @@ Transactions
 
 Forecast 
 ---------
-![image](https://user-images.githubusercontent.com/63491056/185108484-b64d41ae-547e-4c68-a8c8-669cb335a9fb.png)
+![image](https://user-images.githubusercontent.com/63491056/185198537-92da33e9-8ee6-48b0-b860-377c3b61901d.png)
 
 Forecast : Perhitungan Tabel Peramalan
 ---------
-![image](https://user-images.githubusercontent.com/63491056/185103329-83bb1a53-2a78-4c88-a1e3-17ecdd0bf8d1.png)
+![image](https://user-images.githubusercontent.com/63491056/185198708-ecc97234-eec6-471c-9e82-3a90298db164.png)
 
-Forecast : Perhitungan Tabel Kesalahan Peramalan
----------
-![image](https://user-images.githubusercontent.com/63491056/185108687-d15d61a9-fac1-43e0-a37d-bd8339dcf9d2.png)
