@@ -17,3 +17,7 @@ Transactions
 Forecast 
 ---------
 ![image](https://user-images.githubusercontent.com/63491056/184778527-25a2620f-373f-4ff3-94d3-e8a40b4d215e.png)
+
+Forecast : Perhitungan
+---------
+![image](https://user-images.githubusercontent.com/63491056/185021963-bc40cf71-a1b0-4083-8149-016541eec9da.png)
