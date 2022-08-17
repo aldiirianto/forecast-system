@@ -73,7 +73,7 @@ chart: {
 },
 
 title: {
-    text: 'Grafik Penjualan Produk Batu Alam Periode Januari - Juni 2020'
+    text: 'Grafik Penjualan Produk Batu Alam Periode Juli - Desember 2020'
 },
 
 subtitle: {
@@ -81,7 +81,7 @@ subtitle: {
 },
 
 xAxis: {
-  categories: ['Jan 20', 'Feb 20', 'Mar 20', 'Apr 20', 'Mei 20', 'Jun 20']
+  categories: ['Jul 20', 'Agu 20', 'Sep 20', 'Okt 20', 'Nov 20', 'Des 20']
 },
 
 yAxis: {

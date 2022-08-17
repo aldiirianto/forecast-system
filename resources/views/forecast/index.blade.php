@@ -28,7 +28,7 @@ Highcharts.chart('container',
                     },
 
                     title: {
-                        text: 'Grafik Prediksi Penjualan Produk Batu Alam Periode July - Desember 2020'
+                        text: 'Grafik Prediksi Penjualan Produk Batu Alam'
                     },
 
                     subtitle: {
@@ -36,7 +36,7 @@ Highcharts.chart('container',
                     },
 
                     xAxis: {
-                    categories: ['Jul 20', 'Aug 20', 'Sep 20', 'Okt 20', 'Nov 20', 'Des 20']
+                    categories: ['January 2021']
                     },
 
                     yAxis: {
@@ -60,22 +60,22 @@ Highcharts.chart('container',
 
                     series: [{
                         name: 'Terramix',
-                        data: [70,202,155,40,145]
+                        data: [70]
                     }, {
                         name: 'Ubin Teraso Cetak - Cordon Blue',
-                        data: [55,15,25,25,80,50]
+                        data: [55]
                     }, {
                         name: 'Ubin Teraso Cetak - Orange Classic',
-                        data: [85,35,42,25,25]
+                        data: [85]
                     }, {
                         name: 'Ubin Teraso Cetak - Coral Pink',
-                        data: [0,25,15,23,10,15]
+                        data: [15]
                     }, {
                         name: 'Ubin Teraso Cetak - Green Army',
-                        data: [25,80,50,15,5,25]
+                        data: [25]
                     }, {
                         name: 'Ubin Teraso Cetak - Black Casto',
-                        data: [100,45,25,56,15,100]
+                        data: [100]
                     }],
 
                     responsive: {
