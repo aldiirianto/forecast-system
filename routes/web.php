@@ -43,7 +43,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   // route transaksi
   Route::resource('transaksi', TransaksiController::class);
   // route forecast
-  Route::resource('forecast', ForecastController::class);
+  // Route::resource('forecast', ForecastController::class);
+  Route::get('/forecast',[ForecastController::class, 'index'])->name('forecast.index');
+  Route::get('/forecast/hitung',[ForecastController::class, 'hitung'])->name('forecast.hitung');
   // profil
   Route::get('profil', [UserController::class, 'index']);
   // setting profil

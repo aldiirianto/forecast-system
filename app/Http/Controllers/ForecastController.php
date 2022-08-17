@@ -14,7 +14,9 @@ class ForecastController extends Controller
     }
 
     public function hitung() {
-        $data = array('title' => 'Perhitungan');
+        $datatransaksi = Transaksi::orderBy('tgl_transaksi', 'asc')->paginate(20);
+        $data = ['title' => 'Perhitungan',
+        'data_transaksi' => $datatransaksi];
         return view('forecast.hitung',$data);
     }
 }

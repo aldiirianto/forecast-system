@@ -5,7 +5,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <a href="#" style="align-left"class="btn btn-sm btn-primary">
+                    <a href="{{route('forecast.hitung')}}" style="align-left"class="btn btn-sm btn-primary">
                     Perhitungan
                     </a>
                 </div>
