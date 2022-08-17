@@ -20,4 +20,4 @@ Forecast
 
 Forecast : Perhitungan
 ---------
-![image](https://user-images.githubusercontent.com/63491056/185021963-bc40cf71-a1b0-4083-8149-016541eec9da.png)
+![image](https://user-images.githubusercontent.com/63491056/185103329-83bb1a53-2a78-4c88-a1e3-17ecdd0bf8d1.png)
