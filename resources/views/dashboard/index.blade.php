@@ -73,7 +73,7 @@ chart: {
 },
 
 title: {
-    text: 'Grafik Penjualan Produk Batu Alam Periode Juli - Desember 2020'
+    text: 'Grafik Penjualan Produk Batu Alam Periode Juli - Desember 2021'
 },
 
 subtitle: {
@@ -81,7 +81,7 @@ subtitle: {
 },
 
 xAxis: {
-  categories: ['Jul 20', 'Agu 20', 'Sep 20', 'Okt 20', 'Nov 20', 'Des 20']
+  categories: ['Jul 21', 'Agu 21', 'Sep 21', 'Okt 21', 'Nov 21', 'Des 21']
 },
 
 yAxis: {
@@ -105,22 +105,19 @@ plotOptions: {
 
 series: [{
     name: 'Terramix',
-    data: [70,202,155,40,145]
+    data: [33,40,45,48,42,31]
 }, {
     name: 'Ubin Teraso Cetak - Cordon Blue',
-    data: [55,15,25,25,80,50]
-}, {
-    name: 'Ubin Teraso Cetak - Orange Classic',
-    data: [85,35,42,25,25]
+    data: [80,68,112,58,67,70]
 }, {
     name: 'Ubin Teraso Cetak - Coral Pink',
-    data: [0,25,15,23,10,15]
+    data: [51,60,63,50,67,40]
 }, {
     name: 'Ubin Teraso Cetak - Green Army',
-    data: [25,80,50,15,5,25]
+    data: [28,75,88,35,68,65]
 }, {
     name: 'Ubin Teraso Cetak - Black Casto',
-    data: [100,45,25,56,15,100]
+    data: [40,88,90,80,75,50]
 }],
 
 responsive: {

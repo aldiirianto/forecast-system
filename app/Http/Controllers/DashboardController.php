@@ -29,7 +29,7 @@ class DashboardController extends Controller
         ->groupBy(DB::raw("MONTH(tgl_transaksi)"))
         ->get();
 
-        // dd($sum1);
+        //dd($sum1);
 
 
 
@@ -41,7 +41,7 @@ class DashboardController extends Controller
 
         $categories = [];
         foreach($datatransaksi as $item){
-            $categories[] =$item->produk->nama_produk;
+            $categories[] =$item->nama_produk;
         }
 
         // dd($qty);

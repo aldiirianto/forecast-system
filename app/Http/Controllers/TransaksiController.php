@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Kategori;
@@ -22,7 +21,7 @@ class TransaksiController extends Controller
 
     public function index()
     {
-        $datatransaksi = Transaksi::orderBy('tgl_transaksi', 'asc')->paginate(20);
+        $datatransaksi = Transaksi::orderBy('tgl_transaksi', 'asc')->paginate(500);
         $itemproduk = Produk::paginate(20);
         $itemkategori = Kategori::paginate(20);
         $data = ['title' => 'Transaksi',

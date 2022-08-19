@@ -36,7 +36,7 @@ Highcharts.chart('container',
                     },
 
                     xAxis: {
-                    categories: ['January 2021']
+                    categories: ['January 2022']
                     },
 
                     yAxis: {
@@ -60,22 +60,19 @@ Highcharts.chart('container',
 
                     series: [{
                         name: 'Terramix',
-                        data: [70]
+                        data: [32.1]
                     }, {
                         name: 'Ubin Teraso Cetak - Cordon Blue',
-                        data: [55]
-                    }, {
-                        name: 'Ubin Teraso Cetak - Orange Classic',
-                        data: [85]
+                        data: [69.7]
                     }, {
                         name: 'Ubin Teraso Cetak - Coral Pink',
-                        data: [15]
+                        data: [42.7]
                     }, {
                         name: 'Ubin Teraso Cetak - Green Army',
-                        data: [25]
+                        data: [65.3]
                     }, {
                         name: 'Ubin Teraso Cetak - Black Casto',
-                        data: [100]
+                        data: [52.5]
                     }],
 
                     responsive: {
